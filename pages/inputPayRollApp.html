@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <link rel="stylesheet" href="\css\inputPayRollApp.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet"> 
     <title>Employee PayRoll App</title>
-    <script defer src="\js\inputPayRollApp.js"></script>
-    <script defer src="\js\EmployeePayrollData.js"></script>
-    
+    <script defer src="../js/EmployeePayrollData.js"></script>
     </head>
 <body>
    <!--UC1--> 
@@ -22,21 +21,21 @@
     </div>
    </header>
    <div class="form-content">
-       <form class="form" action="#" onsubmit="save(event);return false">
+       <form class="form" action="#" onreset="resetForm()" onsubmit="save(event)">
       <!---Uc2---->
         <div class="form-head">Employee payroll form</div>
         <div class="row-content">
             <label class="label-text" for="name">Name</label>
             <input class="input" type="text" id="name" name="name" placeholder="your name..." required>
-      <error-output class="text-erroro" for="text"></error-output>
+            <error-output class="text-error" for="text"></error-output>
         </div>
         <!--uc3-->
         <div class="row-content">
             <label class="label text" for="profile">Profile Image</label>
             <div class="profile-radio-content">
                 <labal>
-                    <input type="radio" id="profile1" name="profile" value="\assets\images\Ellipse -05.png" required>
-                    <img class="profile" id="image1" src="\assets\images\Ellipse -05.png">
+                    <input type="radio" id="profile1" name="profile" value="\assets\images\Ellipse-09.png" required>
+                    <img class="profile" id="image1" src="\assets\images\Ellipse -09.png">
                    </labal>
                 <label>
                     <input type="radio" id="profile2" name="profile" value="\assets\images\Ellipse -01.png" required>

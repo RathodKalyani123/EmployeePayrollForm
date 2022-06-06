@@ -64,12 +64,6 @@ body{
 
 }
 
-error-output{
-    margin-left: 10px;
-    font-size: 12px;
-    font-style: italic;
-    color:red;
-}
 
 .form-head{
     font: normal normal bold 24px/37px Roboto;
@@ -110,7 +104,15 @@ label{
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
-}   
+} 
+
+error-output{
+    margin-left: 10px;
+    font-size: 12px;
+    font-style: italic;
+    color:red;
+}
+
 
 /*Uc3*/
 .profile-radio-content{
@@ -119,7 +121,7 @@ label{
 }
 
 
-.profile-radio-content > label{
+.profile-radio-content > label {
     display: flex;
     flex-direction: row;
     align-items: center;

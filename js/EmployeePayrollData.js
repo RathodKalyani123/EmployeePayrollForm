@@ -1,17 +1,13 @@
 
     class EmployeePayrollData{
-    
-        constructor(...params){
-            this.name = params[0];
-            this.profileImage = params[1];
-            this.gender = params[2];
-            this.department = params[3];
-            this.salary = params[4];
-            this.startDate = params[5];
-            this.notes = params[6];
+        get id() {
+            return this._id;
         }
     
-        get name(){
+        set id(id) {
+            this._id = id;
+        }
+      get name(){
             return this._name;
         }
         set name(name){
@@ -77,3 +73,50 @@
              + this.salary + ", Start Date = " + employeeDate + ", Notes = " + this.notes;
         }
     }
+
+
+    window.addEventListener('DOMContentLoaded', (event) => {
+        const name = document.querySelector('#name');
+        const nameError = document.querySelector('.text-error');
+        name.addEventListener('input', function () {
+          if (name.value.length == 0) {
+            nameError.textContent = "";
+            return;
+          }
+          try {
+            (new EmployeePayrollData()).name = name.value;
+            nameError.textContent = "";
+          }
+          catch (e) {
+            nameError.textContent = e;
+          }
+        });
+    
+    const salary = document.querySelector('#salary');
+    const output = document.querySelector('.salary-output');
+    output.textContent = salary.value;
+    salary.addEventListener('input', function() {
+        output.textContent = salary.value;
+        });
+    });
+    
+        const save = () => {
+            try{
+                let employeePayrollData=createEmployeePayroll();
+                createAndUpdateStorage(employeePayrollData);
+            }catch(e){
+                return;
+            }
+        }
+
+        const createEmployeePayroll=()=>{
+            let employeePayrollData=new EmployeePayrollData();
+            try{
+                employeePayrollData._name=getInputValueById('#name');
+            }catch (e) {
+                setTextValue('.text-error',e);
+                throw e;
+             }
+             employeePayrollData.profileImage=getSelectedValues('[name=profile').pop();
+             
+        }
