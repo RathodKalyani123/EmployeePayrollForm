@@ -7,18 +7,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet"> 
     <title>Employee PayRoll App</title>
     <script defer src="\js\inputPayRollApp.js"></script>
+    <script defer src="\js\EmployeePayrollData.js"></script>
     
     </head>
 <body>
    <!--UC1--> 
    <header class="header-content header">
-       <div class="logo-content">
-           <img src="\assets\images\logo.png" alt="">
-           <div>
-               <span class="emp-text">EMPLOYEE</span><br>
-                <span class="emp-text emp-payroll">PAYROLL</span>
-         </div>
-       </div>
+    <div class="logo-content">
+        <img src="\assets\images\logo.png" alt="logo">
+        <div>
+            <span class="emp-text">EMPLOYEE</span><br>
+            <span class="emp-text emp-payroll">PAYROLL</span>
+        </div>
+    </div>
    </header>
    <div class="form-content">
        <form class="form" action="#" onsubmit="save(event);return false">
@@ -27,6 +28,7 @@
         <div class="row-content">
             <label class="label-text" for="name">Name</label>
             <input class="input" type="text" id="name" name="name" placeholder="your name..." required>
+      <error-output class="text-erroro" for="text"></error-output>
         </div>
         <!--uc3-->
         <div class="row-content">
