@@ -117,6 +117,33 @@
                 setTextValue('.text-error',e);
                 throw e;
              }
-             employeePayrollData.profileImage=getSelectedValues('[name=profile').pop();
-             
+             employeePayrollData.profileImage=getSelectedValues('[name=profile]').pop();
+             employeePayrollData.gender=getSelectedValues('[name=gender]').pop();
+             employeePayrollData.department=getSelectedValues('[name=department]').pop();
+             employeePayrollData.salary=getInputValueById('#salary');
+             employeePayrollData.notes=getInputValueById('#notes');
+             let Date=getInputValueById('#day')+" "+getInputValueById('#month')+" "+getInputValueById('#year');
+             employeePayrollData.Date=Date.parse(Date);
+             alert(employeePayrollData.toString());
+             return employeePayrollData;
+
+        }
+
+        const getSelectedValues=(propertyvalue) => {
+            let allItems=document.querySelectorAll(propertyvalue);
+            let setItems=[];
+            allItems.forEach(item => {
+           if(item.checked) setItems.push(item.value);
+            });
+            return setItems;
+        }
+
+        const getInputValueById = (id) =>{
+            let value=document.querySelector(id).value;
+            return value;
+        }
+
+        const getInputElementValue= (id) =>{
+            let value=document.getElementById(id).value;
+            return value;
         }
